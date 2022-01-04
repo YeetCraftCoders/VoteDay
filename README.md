@@ -1,5 +1,1 @@
-# DiscordWL
-
-Plugin odpowiedzialny za dodawanie do whitelisty graczy za pomocą kanału #dodawanie-wl oraz za komendę /dodaj <nick> 
-
-Maintained by Monka
+# Wewnętrzny wzór przeznaczony do pracy nad 

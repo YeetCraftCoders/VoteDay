@@ -32,10 +32,11 @@
        The Version is current version of your plugin. You want to update this continuously
    -->
 
-    <groupId>me.flour.discordwl</groupId>
-    <artifactId>discordWL</artifactId>
-    <version>0.0.1</version>
-    <name>DiscordWL</name>
+    <groupId>pl.fabrykacraft.template</groupId>
+    <artifactId>template</artifactId>
+    <version>1.0.0</version>
+    <name>Template</name>
+
 
 
     <!-- ############################################################################### -->
@@ -51,7 +52,7 @@
     <properties>
 
 
-        <main.class>me.flour.discordwl.Initialize</main.class>
+        <main.class>pl.fabrykacraft.template.Initialize</main.class>
 
 
         <foundation.version>5.11.2</foundation.version>
@@ -157,6 +158,9 @@
     </dependencies>
 
     <build>
+
+   
+
 
         <finalName>${project.artifactId}-NoRes</finalName>
 
