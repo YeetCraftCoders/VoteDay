@@ -32,10 +32,10 @@
        The Version is current version of your plugin. You want to update this continuously
    -->
 
-    <groupId>pl.fabrykacraft.template</groupId>
-    <artifactId>template</artifactId>
+    <groupId>pl.fabrykacraft.voteday</groupId>
+    <artifactId>voteday</artifactId>
     <version>1.0.0</version>
-    <name>Template</name>
+    <name>VoteDay</name>
 
 
 
@@ -52,7 +52,7 @@
     <properties>
 
 
-        <main.class>pl.fabrykacraft.template.Initialize</main.class>
+        <main.class>pl.fabrykacraft.voteday.Initialize</main.class>
 
 
         <foundation.version>5.11.2</foundation.version>
@@ -208,7 +208,6 @@
                                 <includes>
                                     <include>org.mineacademy:Game*</include>
                                     <include>com.github.kangarko:Foundation*</include>
-                                    <include>github.scarsz.*</include>
                                     <include>me.clip.placeholderapi.*</include>
 
                                 </includes>
@@ -243,7 +242,7 @@
                         <relocation>
                             <pattern>org.bstats</pattern>
                             <!-- Replace this with your package! -->
-                            <shadedPattern>me.flour.flouryperks.FirstFile</shadedPattern>
+                            <shadedPattern>pl.fabrykacraft.voteday.Initialize</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

@@ -1,8 +1,7 @@
-name: DiscordWL
+name: VoteDay
 version: ${project.version}
 main: ${main.class}
 author: Monka
 api-version: 1.17
-depend: [DiscordSRV]
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.3
