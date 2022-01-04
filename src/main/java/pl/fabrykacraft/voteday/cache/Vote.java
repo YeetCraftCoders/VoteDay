@@ -32,6 +32,12 @@ public class Vote {
 
     }
 
+    public void clearPlayer() {
+        vote.playersWhoDay.clear();
+        vote.playersWhoNight.clear();
+        vote.playersWhoVoted.clear();
+    }
+
     public static Vote getInstance() {
         if (vote == null) {
             vote = new Vote();

@@ -10,6 +10,7 @@ public class NocCommand extends SimpleCommand {
 
     public NocCommand(String label) {
         super(label);
+        setPermission(null);
         
     }
 

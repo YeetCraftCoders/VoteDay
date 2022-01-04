@@ -10,6 +10,7 @@ public class DzienCommand extends SimpleCommand {
 
     public DzienCommand(String label) {
         super(label);
+        setPermission(null);
         
     }
 

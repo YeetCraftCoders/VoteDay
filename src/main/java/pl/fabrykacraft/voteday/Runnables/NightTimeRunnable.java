@@ -65,6 +65,7 @@ public class NightTimeRunnable extends BukkitRunnable {
     
                         vote.setIsOn(false);
                         vote.setWasVoted(true);
+                        vote.clearPlayer();
     
                         
                     }
