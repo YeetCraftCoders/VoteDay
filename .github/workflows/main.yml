@@ -1,0 +1,64 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Upload to server
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  Build-For-Server:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - id: checkout
+      name: Checkout code
+      uses: actions/checkout@v2
+    - id: setjdk  
+      name: Set up JDK 16
+      uses: actions/setup-java@v2
+      with:
+        java-version: '16'
+        distribution: 'adopt'
+        cache: maven
+    - id: build    
+      name: Build with Maven
+      run: mvn clean install
+    - id: upload  
+      name: Upload Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        path: target/voteday.jar
+        name: jar-file
+        retention-days: 1
+    - id: create-release
+      name: Create Github release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: Release-${{ github.sha }}
+        release_name: Release ${{ github.sha }}
+        draft: false
+        prerelease: false
+    - id: move-target
+      name: Move Target File
+      run:  |
+        mkdir ./build
+        mv ./target/voteday.jar ./build/voteday.jar
+    - id: ftp-deploy
+      name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: fabrykacraft.pl
+        FTP_USERNAME: monkapszenna.15b4a477
+        FTP_PASSWORD: Creep123!
+        LOCAL_DIR: build
+        REMOTE_DIR: plugins
+        METHOD: sftp
+        PORT: 2022
