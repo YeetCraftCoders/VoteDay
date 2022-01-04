@@ -1,11 +1,11 @@
-package me.flour.discordwl;
+package me.flour.discordwl.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.mineacademy.fo.command.SimpleCommand;
 
 public class Whitelist extends SimpleCommand {
-    protected Whitelist(String label) {
+    public Whitelist(String label) {
         super(label);
         setPermission("wl.dodaj");
         setMinArguments(1);

@@ -4,6 +4,5 @@ main: ${main.class}
 author: Monka
 api-version: 1.17
 depend: [DiscordSRV]
-softdepend: [PlaceholderAPI]
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.3
