@@ -25,6 +25,7 @@ public class DzienCommand extends SimpleCommand {
 
             vote.getPlayersWhoDay().add(player);
             vote.getPlayersWhoVoted().add(player);
+            
             Common.broadcast("&a&l[G] &bGracz " + player.getName() + "&b zagłosował na dzień!");
         } else if (!vote.getIsOn()) {
             Common.tell(player, "&a&l[G] &bAktualnie nie ma głosowania");
