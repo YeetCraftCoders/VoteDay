@@ -1,6 +1,7 @@
 package pl.fabrykacraft.voteday.Runnables;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.Countdown;
@@ -39,13 +40,20 @@ public class NightTimeRunnable extends BukkitRunnable {
                     @Override
                     protected void onTick() {
                       
-                        
+                        if (getCountdownSeconds() - getSecondsSinceStart() == 10) {
+
+                            for (Player player : Bukkit.getOnlinePlayers()) {
+                                if (!vote.getPlayersWhoVoted().contains(player)) {
+                                    Common.tell(player, "&a&l[G] &bZa 10 sekund kończy się głosowanie. Czy jesteś pewien, że nie chcesz głsować");
+                                }
+                            }
+                        }
                     }
     
                     @Override
                     protected void onEnd() {
                      
-                        if (vote.getPlayersWhoDay().size() > 0) {
+                        if (vote.getPlayersWhoVoted().size() > 0) {
     
     
                             if (vote.getPlayersWhoDay().size() >= vote.getPlayersWhoNight().size()) {

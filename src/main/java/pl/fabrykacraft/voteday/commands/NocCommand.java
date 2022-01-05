@@ -25,6 +25,7 @@ public class NocCommand extends SimpleCommand {
 
             vote.getPlayersWhoNight().add(player);
             vote.getPlayersWhoVoted().add(player);
+            Common.broadcast("&a&l[G] &bGracz " + player.getName() + "&b zagłosował na noc!");
         } else if (!vote.getIsOn()) {
             Common.tell(player, "&a&l[G] &bAktualnie nie ma głosowania");
         } else if (vote.getPlayersWhoVoted().contains(player)) {

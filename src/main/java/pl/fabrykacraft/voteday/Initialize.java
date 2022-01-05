@@ -21,6 +21,8 @@ public class Initialize extends SimplePlugin {
 
         task = new NightTimeRunnable();
 
+        
+
         task.runTaskTimer(this, 0, 1200);
 
         registerCommand(new NocCommand("noc"));
