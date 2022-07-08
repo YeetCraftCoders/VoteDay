@@ -2,6 +2,6 @@ name: VoteDay
 version: ${project.version}
 main: ${main.class}
 author: Monka
-api-version: 1.17
+api-version: 1.19
 libraries:
   - org.openjdk.nashorn:nashorn-core:15.3
